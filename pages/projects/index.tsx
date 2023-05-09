@@ -1,5 +1,5 @@
 import React from "react";
-import { Client } from "@notionhq/client";
+
 import { notion } from "../../services/notion";
 import Head from "next/head";
 import Image from "next/image";
@@ -88,6 +88,6 @@ export async function getStaticProps() {
     props: {
       projects: response.results,
     },
-    revalidate: 1,
+    //revalidate: 1,
   };
 }
