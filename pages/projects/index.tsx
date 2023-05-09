@@ -3,6 +3,7 @@ import React from "react";
 import { notion } from "../../services/notion";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   id: string;
@@ -47,27 +48,59 @@ export default function Projects({ projects }: any) {
                     <span key={item}>{item.plain_text}</span>
                   ))}
                 </p>
-                <a
-                  rel="noopener"
-                  target="_black"
-                  href={project.properties.URL.url}
-                  className="text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="w-6 h-6"
+                <div className="my-2 flex flex-wrap">
+                  {project.properties.Tags.multi_select.map((item: any) => (
+                    <span
+                      key={item}
+                      className="text-sm font-mono p-1 border border-white/20 rounded m-1"
+                    >
+                      {item.name}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex items-center space-x-4">
+                  <a
+                    rel="noopener"
+                    target="_black"
+                    href={project.properties.URL.url}
+                    className="text-white"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
-                    />
-                  </svg>
-                </a>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"
+                      />
+                    </svg>
+                  </a>
+                  <button>
+                    <Link
+                      href={`/projects/${project.properties.slug.rich_text[0].plain_text}`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+                        />
+                      </svg>
+                    </Link>
+                  </button>
+                </div>
               </div>
             );
           })}
@@ -78,16 +111,17 @@ export default function Projects({ projects }: any) {
 }
 
 export async function getStaticProps() {
+  const databaseId = process.env.NOTION_PROJECTS_DB;
   const response = await notion.databases.query({
-    database_id: `${process.env.NOTION_PROJECTS_DB}`,
+    database_id: `${databaseId}`,
   });
 
-  console.log(response);
+  //console.log(response);
 
   return {
     props: {
       projects: response.results,
     },
-    //revalidate: 1,
+    revalidate: 1,
   };
 }
