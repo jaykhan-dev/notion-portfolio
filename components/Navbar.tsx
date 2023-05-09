@@ -7,8 +7,11 @@ export default function Navbar() {
         <div>
           <Link href="/">Home</Link>
         </div>
-        <div>
+        <div className="flex items-center space-x-4">
           <Link href="/projects">Projects</Link>
+          <Link href="/music">Music</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/resume">Resume</Link>
         </div>
       </div>
     </nav>
