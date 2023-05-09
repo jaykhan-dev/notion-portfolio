@@ -1,6 +1,6 @@
 import React from "react";
 import { Client } from "@notionhq/client";
-import { notion } from "../api/notion";
+import { notion } from "../../services/notion";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -13,6 +13,7 @@ interface Project {
 }
 
 export default function Projects({ projects }: any) {
+  if (!projects) return <div>no projects</div>;
   return (
     <section>
       <Head>
@@ -76,7 +77,7 @@ export default function Projects({ projects }: any) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const response = await notion.databases.query({
     database_id: `${process.env.NOTION_PROJECTS_DB}`,
   });
@@ -87,5 +88,6 @@ export async function getServerSideProps() {
     props: {
       projects: response.results,
     },
+    revalidate: 1,
   };
 }
