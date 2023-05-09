@@ -1,0 +1,8 @@
+.digitalProducts {
+  background-image: url("../public/images/himalayas-6-mj.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 100vw;
+}
