@@ -17,7 +17,9 @@ interface Project {
 
 export default function Home({ projects }: any) {
   return (
-    <main className={`grid place-items-center h-screen ${inter.className}`}>
+    <main
+      className={`grid place-items-center h-screen overflow-y-hidden ${inter.className}`}
+    >
       <Head>
         <title>Jay Khan</title>
         <meta name="description" content="Jay Khan Portfolio" />

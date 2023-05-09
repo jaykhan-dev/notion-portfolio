@@ -17,8 +17,27 @@ const links = [
 
 export default function Navbar() {
   return (
-    <nav className="bg-zinc-900 fixed top-0 w-full">
-      <div className="flex items-center justify-between">
+    <nav className="bg-black border-b border-white/40 fixed top-0 w-full z-50">
+      <div className="bg-purple-500 py-2 mx-auto">
+        <div className="flex items-center justify-end lg:w-2/3 mx-auto px-4">
+          <p>New digital product!</p>{" "}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
+            />
+          </svg>
+        </div>
+      </div>
+      <div className="flex items-center justify-between lg:w-2/3 mx-auto">
         <div className="px-4 uppercase font-bold py-2">
           <Link href="/" className="">
             Jay Khan

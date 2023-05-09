@@ -4,6 +4,8 @@ import { notion } from "../../services/notion";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "../../styles/wallpapers.module.css";
+import ContactBlock from "@/components/ContactBlock";
 
 interface Project {
   id: string;
@@ -24,41 +26,44 @@ export default function Projects({ projects }: any) {
           content="Selected projects in graphics and frontend"
         />
       </Head>
-      <div>
-        <div className="grid lg:grid-cols-3 gap-4 lg:w-2/3 mx-auto mt-20 lg:p-0 p-4">
+      <div className="bg-gradient-to-b from-black/60 via-black to-black py-36">
+        <div className="grid lg:grid-cols-3 gap-4 lg:w-2/3 mx-auto lg:p-0 p-4">
           {projects.map((project: any) => {
             return (
               <div
                 key={project.id}
-                className="border my-2 p-4 border-white/20 rounded-xl hover:border-white/50 duration-300"
+                className="border my-2 backdrop-blur-lg border-white/20 rounded-xl hover:border-white/50 duration-300"
               >
                 <Image
                   src={project.properties.Image.files[0].external.url}
-                  width={400}
+                  width={500}
                   height={400}
                   alt="img"
+                  className="rounded-t-xl"
                 />
-                <h2 className="text-2xl font-mono my-4">
-                  {project.properties.Title.title.map((item: any) => (
-                    <span key={item}> {item.plain_text}</span>
-                  ))}
-                </h2>
-                <p className="text-sky-400">
-                  {project.properties.Summary.rich_text.map((item: any) => (
-                    <span key={item}>{item.plain_text}</span>
-                  ))}
-                </p>
-                <div className="my-2 flex flex-wrap">
-                  {project.properties.Tags.multi_select.map((item: any) => (
-                    <span
-                      key={item}
-                      className="text-sm font-mono p-1 border border-white/20 rounded m-1"
-                    >
-                      {item.name}
-                    </span>
-                  ))}
+                <div className="p-4">
+                  <h2 className="text-2xl font-mono my-2">
+                    {project.properties.Title.title.map((item: any) => (
+                      <span key={item}> {item.plain_text}</span>
+                    ))}
+                  </h2>
+                  <p className="text-sky-400">
+                    {project.properties.Summary.rich_text.map((item: any) => (
+                      <span key={item}>{item.plain_text}</span>
+                    ))}
+                  </p>
+                  <div className="my-2 flex flex-wrap">
+                    {project.properties.Tags.multi_select.map((item: any) => (
+                      <span
+                        key={item}
+                        className="text-sm font-mono p-1 border border-white/20 rounded m-1"
+                      >
+                        {item.name}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center space-x-4 border-t border-white/20 mt-4 py-4 px-4">
                   <a
                     rel="noopener"
                     target="_black"
@@ -83,7 +88,9 @@ export default function Projects({ projects }: any) {
                   <button>
                     <Link
                       href={`/projects/${project.properties.slug.rich_text[0].plain_text}`}
+                      className="flex items-center uppercase text-purple-500"
                     >
+                      read more
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"

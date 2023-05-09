@@ -1,3 +1,4 @@
+import ContactBlock from "@/components/ContactBlock";
 import FlowbiteNav from "@/components/FlowbiteNav";
 import Navbar from "@/components/Navbar";
 import "@/styles/globals.css";
@@ -10,6 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {/* <FlowbiteNav /> */}
       <Component {...pageProps} />
       {/* <button className="absolute bottom-10 right-10">Contact</button> */}
+      <ContactBlock />
     </>
   );
 }
