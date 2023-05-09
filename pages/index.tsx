@@ -22,8 +22,13 @@ export default function Home({ projects }: any) {
         <title>Jay Khan</title>
         <meta name="description" content="Jay Khan Portfolio" />
       </Head>
-      <div>
-        <h1>Jay Khan</h1>
+      <div className="w-full h-full">
+        <iframe
+          width="100%"
+          height="100%"
+          allowFullScreen
+          src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https%3A//media.graphassets.com/1if4Tz52T6yRUQ4ohfp0&title=drag%2C%20zoom&autoLoad=true&autoRotate=5"
+        ></iframe>
       </div>
     </main>
   );

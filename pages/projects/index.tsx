@@ -23,12 +23,12 @@ export default function Projects({ projects }: any) {
         />
       </Head>
       <div>
-        <div className="grid lg:grid-cols-3 gap-4 lg:w-2/3 mx-auto mt-20">
+        <div className="grid lg:grid-cols-3 gap-4 lg:w-2/3 mx-auto mt-20 lg:p-0 p-4">
           {projects.map((project: any) => {
             return (
               <div
                 key={project.id}
-                className="border my-2 p-4 border-white/20 rounded-xl"
+                className="border my-2 p-4 border-white/20 rounded-xl hover:border-white/50 duration-300"
               >
                 <Image
                   src={project.properties.Image.files[0].external.url}
@@ -36,7 +36,7 @@ export default function Projects({ projects }: any) {
                   height={400}
                   alt="img"
                 />
-                <h2 className="text-2xl font-mono">
+                <h2 className="text-2xl font-mono my-4">
                   {project.properties.Title.title.map((item: any) => (
                     <span key={item}> {item.plain_text}</span>
                   ))}
