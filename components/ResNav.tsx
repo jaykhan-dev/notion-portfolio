@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 interface Links {
   path: string;
@@ -19,6 +20,7 @@ const links = [
 
 export default function Home() {
   const [navbar, setNavbar] = useState(false);
+  const router = useRouter();
   //const [cart, setCart] = useState("");
 
   const cart: number = 10;
@@ -44,9 +46,13 @@ export default function Home() {
                     <Link
                       key={link.path}
                       href={link.path}
-                      className="hover:bg-purple-500 duration-300 lg:border-l border-white/50 py-2 px-4 uppercase"
+                      className={
+                        router.pathname == link.path ? "bg-purple-500" : ""
+                      }
                     >
-                      {link.label}
+                      <p className="hover:bg-purple-500 duration-300 lg:border-l border-white/50 py-2 px-4 uppercase">
+                        {link.label}
+                      </p>
                     </Link>
                   ))}
                 </div>
@@ -91,7 +97,10 @@ export default function Home() {
           </div>
         </div>
 
-        <Link href="/cart">
+        <Link
+          href="/cart"
+          className={router.pathname == "/cart" ? "text-blue-500" : ""}
+        >
           <button className="px-4 flex items-center space-x-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
