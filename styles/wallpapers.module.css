@@ -19,9 +19,9 @@
 }
 
 .musicBg {
-  background-image: url("../public/images/himalayas-1-mj.jpg");
+  background-image: url("../public/images/nightsky.jpg");
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
   background-repeat: no-repeat;
   height: 400px;
   width: 100vw;
@@ -29,7 +29,7 @@
 }
 
 .blogBg {
-  background-image: url("../public/images/himalayas-1-mj.jpg");
+  background-image: url("../public/images/wallpaper-2.jpg");
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -39,7 +39,7 @@
 }
 
 .resumeBg {
-  background-image: url("../public/images/himalayas-1-mj.jpg");
+  background-image: url("../public/images/wallpaper.jpg");
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../styles/wallpapers.module.css";
-
+import Link from "next/link";
 export default function ContactBlock() {
   return (
     <div className={styles.contactBlockBg}>
@@ -8,9 +8,11 @@ export default function ContactBlock() {
         <div className="grid place-items-center">
           <p className="uppercase font-bold">contact</p>
           <h2 className="text-6xl font-black my-4">Have a question?</h2>
-          <button className="bg-black text-white rounded-full p-4 px-6 uppercase font-bold border-4 shadow-xl animate-pulse border-purple-500">
-            Inquire
-          </button>
+          <Link href="/contact">
+            <button className="bg-black text-white rounded-full p-4 px-6 uppercase font-bold border-4 shadow-xl animate-pulse border-purple-500">
+              Inquire
+            </button>
+          </Link>
         </div>
       </div>
       <div className="bg-black py-6 w-full grid place-items-center font-mono text-sm uppercase">
