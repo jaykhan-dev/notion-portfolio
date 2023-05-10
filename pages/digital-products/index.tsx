@@ -13,15 +13,15 @@ export default function DigitalProducts({ webTemplates }: any) {
   return (
     <section>
       <div className="">
-        <div className={`${styles.digitalProducts}`}></div>
-        <div className="lg:w-2/3 mx-auto mt-20">
+        <div className={` ${styles.digitalProducts}`}></div>
+        <div className="lg:w-2/3 mx-auto">
           <div>
             {/* <Image src="../images/" width={50} height={50} alt="" /> */}
             <h1 className="lg:text-4xl font-bold border-b-4 py-4 mb-4 border-white/20">
               Digital Products
             </h1>
           </div>
-          <div className="grid lg:grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-3 gap-4 py-10">
             {webTemplates.map((template: any) => (
               <div
                 key={template.id}
@@ -51,7 +51,7 @@ export default function DigitalProducts({ webTemplates }: any) {
 }
 
 export async function getStaticProps() {
-  const webTemplates = process.env.NOTION_WEB_TEMPLATES_DB;
+  const webTemplates = process.env.NOTION_DIGITAL_PRODUCTS_DB;
   const response = await notion.databases.query({
     database_id: `${webTemplates}`,
   });

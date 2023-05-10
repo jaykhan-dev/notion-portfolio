@@ -1,28 +1,59 @@
 .digitalProducts {
-  background-image: url("../public/images/himalayas-6-mj.jpg");
+  background-image: url("../public/images/tokyo.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 400px;
   width: 100vw;
+  background-attachment: fixed;
 }
 
 .projectsBg {
+  background-image: url("../public/images/cityscape.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100vw;
+  background-attachment: fixed;
+}
+
+.musicBg {
   background-image: url("../public/images/himalayas-1-mj.jpg");
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 400px;
+  width: 100vw;
+  background-attachment: fixed;
+}
+
+.blogBg {
+  background-image: url("../public/images/himalayas-1-mj.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 100vw;
+  background-attachment: fixed;
+}
+
+.resumeBg {
+  background-image: url("../public/images/himalayas-1-mj.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 400px;
   width: 100vw;
   background-attachment: fixed;
 }
 
 .contactBlockBg {
-  background-image: url("../public/images/wallpaper.jpg");
+  background-image: url("../public/images/wanderer.jpg");
   background-size: cover;
-  background-position: bottom;
+  background-position: top;
   background-repeat: no-repeat;
-  height: 300px;
+  height: 400px;
   width: 100vw;
   background-attachment: fixed;
 }

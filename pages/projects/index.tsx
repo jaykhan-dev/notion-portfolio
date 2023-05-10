@@ -18,7 +18,7 @@ interface Project {
 export default function Projects({ projects }: any) {
   if (!projects) return <div>no projects</div>;
   return (
-    <section>
+    <>
       <Head>
         <title>Projects</title>
         <meta
@@ -26,13 +26,14 @@ export default function Projects({ projects }: any) {
           content="Selected projects in graphics and frontend"
         />
       </Head>
-      <div className="bg-gradient-to-b from-black/60 via-black to-black py-36">
-        <div className="grid lg:grid-cols-3 gap-4 lg:w-2/3 mx-auto lg:p-0 p-4">
+      <div className={styles.projectsBg}></div>
+      <div className="py-36">
+        <div className="lg:columns-3 gap-8 lg:w-2/3 mx-auto lg:p-0 p-4 place-items-start">
           {projects.map((project: any) => {
             return (
               <div
                 key={project.id}
-                className="border my-2 backdrop-blur-lg border-white/20 rounded-xl hover:border-white/50 duration-300"
+                className="border mb-8 backdrop-blur-lg border-white/20 rounded-xl hover:border-white/50 duration-300"
               >
                 <Image
                   src={project.properties.Image.files[0].external.url}
@@ -88,7 +89,7 @@ export default function Projects({ projects }: any) {
                   <button>
                     <Link
                       href={`/projects/${project.properties.slug.rich_text[0].plain_text}`}
-                      className="flex items-center uppercase text-purple-500"
+                      className="flex items-center uppercase text-purple-500 hover:translate-x-2 duration-300"
                     >
                       read more
                       <svg
@@ -113,7 +114,7 @@ export default function Projects({ projects }: any) {
           })}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
