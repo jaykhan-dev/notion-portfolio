@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ContactBlock() {
   return (
     <div className={styles.contactBlockBg}>
-      <div className="bg-gradient-to-r from-blue-500/0 via-purple-500/40 to-black w-full h-full grid place-items-center text-center">
+      <div className="bg-gradient-to-r from-blue-500/0 via-purple-500/40 to-black w-full h-full grid place-items-center text-center py-20">
         <div className="grid place-items-center">
           <p className="uppercase font-bold">contact</p>
           <h2 className="text-6xl font-black my-4">Have a question?</h2>

@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "@/styles/wallpapers.module.css";
 import { notion } from "@/services/notion";
+import Head from "next/head";
+import PageHeader from "@/components/PageHeader";
 
 interface Job {
   id: string;
@@ -10,22 +12,24 @@ interface Job {
 export default function Resume({ resume }: any) {
   if (!resume) return <div>no data</div>;
   return (
-    <section>
-      <div>
-        <div className={styles.resumeBg}></div>
-        <div>
-          {resume.map((job: any) => (
-            <div key={job.id}>
-              <h2>
-                {job.properties.Title.title.map((item: any) => (
-                  <span key={item}>{item.plain_text}</span>
-                ))}
-              </h2>
-            </div>
-          ))}
-        </div>
+    <>
+      <Head>
+        <title>Resume</title>
+        <meta name="description" content="Work experience" />
+      </Head>
+      <PageHeader title="Projects" image={styles.resumeBg} />
+      <div className="lg:w-2/3 mx-auto my-20">
+        {resume.map((job: any) => (
+          <div key={job.id}>
+            <h2>
+              {job.properties.Title.title.map((item: any) => (
+                <span key={item}>{item.plain_text}</span>
+              ))}
+            </h2>
+          </div>
+        ))}
       </div>
-    </section>
+    </>
   );
 }
 

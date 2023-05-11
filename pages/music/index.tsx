@@ -1,6 +1,8 @@
 import React from "react";
 import { notion } from "@/services/notion";
 import styles from "@/styles/wallpapers.module.css";
+import PageHeader from "@/components/PageHeader";
+import Head from "next/head";
 
 interface Track {
   id: string;
@@ -10,28 +12,29 @@ interface Track {
 export default function Music({ music }: any) {
   if (!music) return <div>no data!</div>;
   return (
-    <section>
-      <div className="grid place-items-center">
-        <div className={styles.musicBg}></div>
-        <div className="lg:w-2/3 mx-auto py-20">
-          <h1 className="lg:text-6xl font-bold">Music</h1>
-          <div className="">
-            {music.map((track: any) => (
-              <div
-                key={track.id}
-                className="p-4 border border-white/20 rounded-xl my-2 w-full"
-              >
-                <h2>
-                  {track.properties.Name.title.map((item: any) => (
-                    <span key={item}>{item.plain_text}</span>
-                  ))}
-                </h2>
-              </div>
-            ))}
-          </div>
+    <>
+      <Head>
+        <title>Jay Khan Music</title>
+        <meta name="description" content="Music made with Ableton and love." />
+      </Head>
+      <PageHeader title="Music" image={styles.musicBg} />
+      <div className="lg:w-2/3 mx-auto my-20">
+        <div className="">
+          {music.map((track: any) => (
+            <div
+              key={track.id}
+              className="p-4 border border-white/20 rounded-xl my-2 w-full"
+            >
+              <h2>
+                {track.properties.Name.title.map((item: any) => (
+                  <span key={item}>{item.plain_text}</span>
+                ))}
+              </h2>
+            </div>
+          ))}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
