@@ -17,7 +17,11 @@ export default function Resume({ resume }: any) {
         <title>Resume</title>
         <meta name="description" content="Work experience" />
       </Head>
-      <PageHeader title="Projects" image={styles.resumeBg} />
+      <PageHeader
+        title="Projects"
+        image={styles.resumeBg}
+        description="Building user interfaces and digital assets for the web primarily. Utilizing AI like Mid-Journey and Github Copilot to increase productivity."
+      />
       <div className="lg:w-2/3 mx-auto my-20">
         {resume.map((job: any) => (
           <div key={job.id}>
@@ -43,6 +47,6 @@ export async function getStaticProps() {
     props: {
       resume: response.results,
     },
-    revalidate: 1,
+    revalidate: 30,
   };
 }

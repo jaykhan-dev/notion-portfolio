@@ -21,11 +21,10 @@ export default function DigitalProducts({ webTemplates }: any) {
           content="Selected projects in graphics and frontend"
         />
       </Head>
-      <PageHeader title="Projects" image={styles.digitalProductsBg} />
+      <PageHeader title="Digital Projects" image={styles.digitalProductsBg} />
       <div className="lg:w-2/3 mx-auto my-20">
         <div className="flex items-center justify-between border-b-4 py-4 mb-4 border-white/20">
           {/* <Image src="../images/" width={50} height={50} alt="" /> */}
-          <h1 className="lg:text-4xl">Digital Products</h1>
 
           <div className="flex space-x-4 items-center">
             <form action="">
@@ -88,6 +87,6 @@ export async function getStaticProps() {
     props: {
       webTemplates: response.results,
     },
-    revalidate: 1,
+    revalidate: 30,
   };
 }

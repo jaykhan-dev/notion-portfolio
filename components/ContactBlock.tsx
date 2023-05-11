@@ -1,6 +1,10 @@
 import React from "react";
 import styles from "../styles/wallpapers.module.css";
 import Link from "next/link";
+import Image from "next/image";
+import Github from "/public/images/github.svg";
+import Twitter from "../public/images/twitter.svg";
+
 export default function ContactBlock() {
   return (
     <div className={styles.contactBlockBg}>
@@ -19,10 +23,10 @@ export default function ContactBlock() {
         <div className="lg:flex items-center justify-between lg:w-2/3 mx-auto lg:space-x-4">
           <div className="lg:flex items-center space-x-2">
             <a href="">
-              <p>Github</p>
+              <Image src={Github} width={40} height={40} alt="Github" />
             </a>
             <a href="">
-              <p>Twitter</p>
+              <Image src={Twitter} width={40} height={40} alt="Twitter" />
             </a>
             <a href="">
               <p>jaykhan.sound@gmail.com</p>

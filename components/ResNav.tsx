@@ -23,7 +23,7 @@ export default function Home() {
   const router = useRouter();
   //const [cart, setCart] = useState("");
 
-  const cart: number = 10;
+  const cart: number = 0;
   return (
     <nav className="w-full bg-black border-b border-white/40 fixed top-0 z-50">
       <div className="justify-between px-4 mx-auto lg:w-2/3 md:items-center flex md:px-8">

@@ -128,6 +128,6 @@ export async function getStaticProps() {
     props: {
       projects: response.results,
     },
-    revalidate: 1,
+    revalidate: 30,
   };
 }
