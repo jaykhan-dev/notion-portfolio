@@ -4,6 +4,7 @@ import { notion } from "@/services/notion";
 import Head from "next/head";
 import PageHeader from "@/components/PageHeader";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Post {
   id: string;
@@ -18,7 +19,11 @@ export default function Blog({ posts }: any) {
         <title>Jay Khan Blog</title>
         <meta name="description" content="Mid Journey Blog" />
       </Head>
-      <PageHeader title="Blog" image={styles.blogBg} />
+      <PageHeader
+        title="Blog"
+        image={styles.blogBg}
+        description="Insides each blog post you will find the Mid Journey prompts.  Feel free to use them to start your own journey"
+      />
       <div className="lg:w-2/3 mx-auto my-20 lg:p-0 p-4 grid lg:grid-cols-2 gap-4">
         {posts.map((post: any) => (
           <div
@@ -43,6 +48,11 @@ export default function Blog({ posts }: any) {
                   <span key={prompt}>{prompt.plain_text}</span>
                 ))}
               </p> */}
+              <Link
+                href={`/blog/${post.properties.slug.rich_text[0].plain_text}`}
+              >
+                <p className="mono">Read More</p>
+              </Link>
             </div>
           </div>
         ))}

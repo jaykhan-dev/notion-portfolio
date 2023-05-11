@@ -4,6 +4,7 @@ import Image from "next/image";
 import styles from "../../styles/wallpapers.module.css";
 import Head from "next/head";
 import PageHeader from "../../components/PageHeader";
+import Link from "next/link";
 
 interface WebTemplate {
   id: string;
@@ -69,6 +70,11 @@ export default function DigitalProducts({ webTemplates }: any) {
                   </p>
                 ))}
               </div>
+              <Link
+                href={`/digital-products/${template.properties.slug.rich_text[0].plain_text}`}
+              >
+                <p className="mono">See more</p>
+              </Link>
             </div>
           ))}
         </div>

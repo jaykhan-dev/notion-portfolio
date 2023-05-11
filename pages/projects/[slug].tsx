@@ -1,4 +1,4 @@
-import { getSingle } from "@/services/notion";
+import { getSingleProject } from "@/services/notion";
 import React from "react";
 
 export default function ProjectPage({ project }: any) {
@@ -27,7 +27,7 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: any) => {
-  const project = await getSingle(params.slug);
+  const project = await getSingleProject(params.slug);
 
   return {
     props: {
