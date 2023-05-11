@@ -1,18 +1,38 @@
+import { getSingle } from "@/services/notion";
 import React from "react";
 
-export default function ProjectPage() {
-  return <div>ProjectPage</div>;
+export default function ProjectPage({ project }: any) {
+  return (
+    <section>
+      <div className="h-screen grid place-items-center">
+        <div>
+          <h1>{project.properties.Title.title[0].plain_text}</h1>
+          <p>
+            {project.properties.Summary.rich_text.map((item: any) => (
+              <span key={item}>{item.plain_text}</span>
+            ))}
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
+  const paths: any = [];
   return {
-    paths: [{ params: { slug: "my-first-project" } }],
-    fallback: false,
+    paths,
+    fallback: "blocking",
   };
-}
+};
 
-export async function getStaticProps() {
+export const getStaticProps = async ({ params }: any) => {
+  const project = await getSingle(params.slug);
+
   return {
-    props: {},
+    props: {
+      project,
+    },
+    revalidate: 60,
   };
-}
+};

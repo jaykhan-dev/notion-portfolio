@@ -1,3 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Krona+One&family=Questrial&family=Turret+Road&display=swap");
+
+/*
+font-family: 'Krona One', sans-serif;
+font-family: 'Questrial', sans-serif;
+font-family: 'Turret Road', cursive;
+*/
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -25,4 +33,43 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+h1 {
+  font-family: "Krona One", sans-serif;
+}
+
+h2,
+h3,
+p {
+  font-family: "Questrial", sans-serif;
+}
+
+a,
+button {
+  font-family: "Turret Road", cursive;
+}
+
+.logo {
+  font-family: "Krona One", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a865c9;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

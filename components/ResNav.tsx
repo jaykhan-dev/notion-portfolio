@@ -26,13 +26,13 @@ export default function Home() {
   const cart: number = 10;
   return (
     <nav className="w-full bg-black border-b border-white/40 fixed top-0 z-50">
-      <div className="justify-between px-4 mx-auto lg:w-2/3 md:items-center lg:flex md:px-8">
+      <div className="justify-between px-4 mx-auto lg:w-2/3 md:items-center flex md:px-8">
         <div>
           <div className="flex items-center justify-between md:block">
             <div className="flex items-center">
               <Link
                 href="/"
-                className="text-2xl text-white font-bold uppercase mr-4"
+                className="logo text-2xl text-white font-bold uppercase mr-4"
               >
                 Jay Khan
               </Link>
@@ -99,7 +99,9 @@ export default function Home() {
 
         <Link
           href="/cart"
-          className={router.pathname == "/cart" ? "text-blue-500" : ""}
+          className={
+            router.pathname == "/cart" ? "text-blue-500" : "lg:flex hidden"
+          }
         >
           <button className="px-4 flex items-center space-x-2">
             <svg

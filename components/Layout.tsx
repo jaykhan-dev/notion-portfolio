@@ -2,11 +2,14 @@ import React from "react";
 import styles from "@/styles/wallpapers.module.css";
 import Image from "next/image";
 
-export default function Layout({ background }: any) {
+export default function Layout({ background, title }: any) {
   return (
     <div>
-      <div className={styles.background}>
-        <Image src={background} alt="background" layout="fill" width={100} />
+      <div style={{ width: "100%", height: "300px", position: "relative" }}>
+        <Image src={background} alt="Page background" fill />
+      </div>
+      <div>
+        <h1 className="lg:text-6xl font-bold">{title}</h1>
       </div>
     </div>
   );

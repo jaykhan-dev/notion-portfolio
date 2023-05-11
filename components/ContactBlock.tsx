@@ -32,7 +32,7 @@ export default function ContactBlock() {
           {/* <a href="">
             <p>khan@getalby.com</p>
           </a> */}
-          <p className="">Made with Next JS + Notion + Mid Journey</p>
+          <p className="">Made with Next JS + Notion + Mid Journey + Stripe</p>
         </div>
       </div>
     </div>
