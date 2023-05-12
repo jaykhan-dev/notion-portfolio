@@ -11,8 +11,8 @@ interface Links {
 const links = [
   //{ path: "/", label: "Home" },
   { path: "/projects", label: "Projects" },
-  { path: "/music", label: "Music" },
-  { path: "/blog", label: "Blog" },
+  //{ path: "/music", label: "Music" },
+  //{ path: "/blog", label: "Blog" },
   { path: "/resume", label: "Resume" },
   { path: "/digital-products", label: "Digital Products" },
   { path: "/contact", label: "Contact" },

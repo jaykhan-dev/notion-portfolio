@@ -23,18 +23,18 @@ export default function DigitalProducts({ products }: any) {
           content="Selected projects in graphics and frontend"
         />
       </Head>
-      <PageHeader title="Digital Projects" image={styles.digitalProductsBg} />
+      <PageHeader title="Digital Products" image={styles.digitalProductsBg} />
       <div className="lg:w-2/3 mx-auto my-20">
-        <div className="flex items-center justify-between border-b py-4 mb-4 border-white/20">
+        <div className="flex items-center justify-betweenpy-4 mb-4">
           {/* <Image src="../images/" width={50} height={50} alt="" /> */}
 
-          <div className="flex space-x-4 items-center px-4">
+          <div className="flex space-x-4 items-center px-4 p-2 bg-purple-900 rounded-xl shadow-xl w-full">
             <form action="">
               <label>Price: </label>
               <select
                 name="cars"
                 id="cars"
-                className="border bg-black text-white border-white/20 rounded-xl ml-4"
+                className="border bg-purple-900 text-white border-white/20 rounded-xl ml-4"
               >
                 <option value="volvo">Free</option>
                 <option value="saab">$5</option>
@@ -46,7 +46,7 @@ export default function DigitalProducts({ products }: any) {
               <select
                 name="cars"
                 id="cars"
-                className="border bg-black text-white border-white/20 rounded-xl ml-4"
+                className="border bg-purple-900 text-white border-white/20 rounded-xl ml-4"
               >
                 <option value="volvo">Templates</option>
                 <option value="saab">Music</option>

@@ -18,12 +18,16 @@ interface Project {
 export default function Home({ projects }: any) {
   return (
     <main
-      className={`grid place-items-center h-screen overflow-y-hidden ${inter.className}`}
+      className={`grid place-items-center h-screen relative ${inter.className}`}
     >
       <Head>
         <title>Jay Khan</title>
         <meta name="description" content="Jay Khan Portfolio" />
       </Head>
+      <div className="absolute bottom-20 left-20">
+        <h1>Jay Khan</h1>
+        <p>I build user interfaces and digital assets</p>
+      </div>
       <div className="w-full h-full">
         <iframe
           width="100%"
