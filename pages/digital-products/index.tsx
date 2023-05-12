@@ -70,11 +70,11 @@ export default function DigitalProducts({ products }: any) {
               <h2 className="lg:text-4xl font-bold mt-4">{product.name}</h2>
               <p className="text-gray-400 my-2">{product.description}</p>
 
-              <p className="hover:bg-purple-700 duration-300 lg:text-3xl font-bold my-2 text-purple-500">
-                $5
+              <p className="lg:text-3xl font-bold my-2 text-purple-500">
+                $##.##
               </p>
               <div className="h-10 bg-purple-500 grid grid-cols-2 rounded">
-                <button className="border-r border-black border-l">
+                <button className="border-r border-black border-l hover:bg-purple-700 duration-300">
                   Add to Cart
                 </button>
                 <button className="hover:bg-purple-700 duration-300">
