@@ -67,18 +67,19 @@ export default function DigitalProducts({ products }: any) {
                 height={400}
                 alt="img"
               />
-              <h2 className="lg:text-4xl font-bold">{product.name}</h2>
-              <p>{product.description}</p>
+              <h2 className="lg:text-4xl font-bold mt-4">{product.name}</h2>
+              <p className="text-gray-400 my-2">{product.description}</p>
 
-              <Link href={`/digital-products/`}>
-                <p className="mono text-purple-500 my-4">See more</p>
-              </Link>
-              <div className="h-10 bg-purple-500 grid grid-cols-3 rounded">
-                <button>$5</button>
+              <p className="hover:bg-purple-700 duration-300 lg:text-3xl font-bold my-2 text-purple-500">
+                $5
+              </p>
+              <div className="h-10 bg-purple-500 grid grid-cols-2 rounded">
                 <button className="border-r border-black border-l">
                   Add to Cart
                 </button>
-                <button>See More</button>
+                <button className="hover:bg-purple-700 duration-300">
+                  See More
+                </button>
               </div>
             </div>
           ))}
