@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Github from "/public/images/github.svg";
 import Twitter from "../public/images/twitter.svg";
+import JKLogo from "../public/images/jk-logo-blue.svg";
+import Linkedin from "../public/images/linkedin.svg";
 
 export default function ContactBlock() {
   return (
@@ -21,12 +23,16 @@ export default function ContactBlock() {
       </div>
       <div className="bg-black py-6 w-full grid place-items-center font-mono text-sm uppercase">
         <div className="lg:flex items-center justify-between lg:w-2/3 mx-auto lg:space-x-4">
-          <div className="lg:flex items-center space-x-2">
+          <div className="lg:flex items-center space-x-4">
+            <Image src={JKLogo} width={40} height={40} alt="Jay Khan Logo" />
             <a href="">
               <Image src={Github} width={40} height={40} alt="Github" />
             </a>
             <a href="">
               <Image src={Twitter} width={40} height={40} alt="Twitter" />
+            </a>
+            <a href="">
+              <Image src={Linkedin} width={40} height={40} alt="Linkedin" />
             </a>
             <a href="">
               <p>jaykhan.sound@gmail.com</p>
