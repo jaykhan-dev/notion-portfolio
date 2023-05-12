@@ -34,9 +34,9 @@ export default function ContactBlock() {
             <a href="">
               <Image src={Linkedin} width={40} height={40} alt="Linkedin" />
             </a>
-            <a href="">
+            {/* <a href="">
               <p>jaykhan.sound@gmail.com</p>
-            </a>
+            </a> */}
           </div>
 
           {/* <a href="">
