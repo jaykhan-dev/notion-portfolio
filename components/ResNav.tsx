@@ -13,7 +13,7 @@ const links = [
   { path: "/projects", label: "Projects" },
   //{ path: "/music", label: "Music" },
   //{ path: "/blog", label: "Blog" },
-  { path: "/resume", label: "Resume" },
+  //{ path: "/resume", label: "Resume" },
   { path: "/digital-products", label: "Digital Products" },
   { path: "/contact", label: "Contact" },
 ];
@@ -47,7 +47,7 @@ export default function Home() {
                       key={link.path}
                       href={link.path}
                       className={
-                        router.pathname == link.path ? "bg-purple-500" : ""
+                        router.pathname == link.path ? "bg-purple-900" : ""
                       }
                     >
                       <p className="hover:bg-purple-500 duration-300 lg:border-l border-white/50 py-2 px-4 uppercase">

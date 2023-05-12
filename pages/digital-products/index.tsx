@@ -59,7 +59,7 @@ export default function DigitalProducts({ products }: any) {
           {products.map((product: any) => (
             <div
               key={product.id}
-              className="border border-white/20 p-4 rounded-xl"
+              className="border border-white/20 p-4 rounded-xl flex flex-col justify-between"
             >
               <Image
                 src={product.images[0]}
@@ -71,8 +71,15 @@ export default function DigitalProducts({ products }: any) {
               <p>{product.description}</p>
 
               <Link href={`/digital-products/`}>
-                <p className="mono text-purple-500">See more</p>
+                <p className="mono text-purple-500 my-4">See more</p>
               </Link>
+              <div className="h-10 bg-purple-500 grid grid-cols-3 rounded">
+                <button>$5</button>
+                <button className="border-r border-black border-l">
+                  Add to Cart
+                </button>
+                <button>See More</button>
+              </div>
             </div>
           ))}
         </div>
