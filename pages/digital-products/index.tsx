@@ -5,7 +5,7 @@ import styles from "../../styles/wallpapers.module.css";
 import Head from "next/head";
 import PageHeader from "../../components/PageHeader";
 import Link from "next/link";
-import { stripe } from "@/services/stripe";
+import { stripe } from "@/pages/api/stripe";
 
 interface WebTemplate {
   id: string;
