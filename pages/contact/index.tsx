@@ -32,7 +32,7 @@ export default function Contact() {
         className="h-screen"
       ></iframe>
 
-      <div className="w-full h-full bg-gradient-to-r from-black/20 via-purple/700 to-blue-900 z-0 absolute top-0">
+      <div className="w-full h-full bg-gradient-to-r from-black/40 via-black/70 to-black z-0 absolute top-0">
         <div className="lg:w-2/3 mx-auto grid lg:grid-cols-2 place-items-center h-full">
           <div>
             <h1 className="lg:text-6xl font-black">Contact</h1>
